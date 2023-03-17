@@ -42,14 +42,23 @@ For more information on the metrics and how to calculate them visit this [link](
 
 # Evaluation
 
-The XGBoost gridsearch model with regularization on the full feature set performed the best. It was able to achieve a 91% recall score for our dropout label. Recall can be thought of as what percent of the dropout cases did the model catch. So 9% of students who dropped out were not caught by the model. 
+<img src="https://github.com/DivisiBULL/predicting_student_outcome/blob/main/Images/xgb_cm.png">
+
+<img src="https://github.com/DivisiBULL/predicting_student_outcome/blob/main/Images/feature_importance_xgboost_reg_full_feature_set.png">
+
+<img src="https://github.com/DivisiBULL/predicting_student_outcome/blob/main/Images/xg_reg_tiny.png">
+
+<img src="https://github.com/DivisiBULL/predicting_student_outcome/blob/main/Images/feature_importance_xg_tiny.png">
+
+TThe XGBoost gridsearch model with regularization on the full feature set performed the best. It was able to achieve a 91% recall score for our dropout label. Recall can be thought of as what percent of the dropout cases did the model catch. So 9% of students who dropped out were not caught by the model. 
 
 Out of our test set, there were 13 students who dropped out but the model predicted they would graduate. These are referred to as false negatives. These are the bottom left cases on the confusion matrix. These cases are the most detrimental outcome from the model as they do not allow us to provide these students with the support they need. 
+
+For the reduced feature set, that imitates a new student to the school. The xgboost regularization model was able to achieve a 82% for recall on the dropout label. Given the reduction in information for the model, the model performs quite well. The rate of false negatives did not get too high to be of concern.
 
 Another metric that is important from getting too high is false positives (when someone graduates, but predicted they drop out). These are the top right cases on the confusion matrix. These are not as detrimental as our false negatives, as on a small scale providing aid to a student who didn’t require it will not negatively affect them. But if there are too many this will cause the university to use resources it did not need to
 
 The model metrics are a sort of balancing act of trying to catch as many people who drop out as we can while not just predicting everyone drops out. If we predicted everyone dropped out we would have a recall score of 100% but it would cause one of our other metrics, precision to drastically decrease. Precision can be thought of as what percent of your predictions were correct. For this model we were able to achieve a precision of 89%. So we are able to catch the majority of student dropouts without having a low precision score
-
 # Additional Projects
 
 Projects:
