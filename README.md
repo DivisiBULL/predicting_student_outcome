@@ -76,3 +76,11 @@ Their could be use cases where you would want a less complex model, that provide
 The XGBoost with regularization performs better on both sets of features (original and reduced set to emulate new students). This model should be the one used for most predictions of student outcome by the institute. It is the best for the business case as the business case does not call for lightning fast run times, instead has higher needs of model performance.
 
 Overall there is a pretty limited amount of work that could be done to improve the models. Some people will have dropped out for reasons the models couldn’t predict. For example a family emergency that required the student to dropout and go back home, which would be near impossible for the model to accurately predict. The few things that could be done to improve the models would likely not be worth the time investment to do (gather more data, higher complexity models). These models will allow student services to aid the students who need it while not stretching student services too thin trying to provide tutoring or economic support to all students.
+
+# Repo Guide
+
+| Imgs - A folder that stores imgs which are used in the README
+
+| PowerPoint - An accompanying powerpoint presentation
+
+| Notebook - The main bulk of the project. Contains all the code and explanations throughout
